@@ -2,8 +2,18 @@ import { nextTestSetup } from 'e2e-utils'
 import { join } from 'node:path'
 import { writeFile } from 'node:fs/promises'
 
-const errorMessage =
-  'The Proxy file "./proxy.ts" must export a function named `proxy` or a default function.'
+const errorMessage = `The Proxy file "./proxy.ts" must export a function named \`proxy\` or a default function.
+This function is what Next.js runs for every request handled by this proxy (previously called middleware).
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Check your "proxy" file.
+- Ensure it has either a default or "proxy" function export.
+- Restart the dev server if the error persists.`
 
 describe('proxy-missing-export', () => {
   const { next, isNextDev, skipped } = nextTestSetup({
