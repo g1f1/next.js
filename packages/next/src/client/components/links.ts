@@ -2,17 +2,17 @@ import type { FlightRouterState } from '../../shared/lib/app-router-types'
 import type { AppRouterInstance } from '../../shared/lib/app-router-context.shared-runtime'
 import {
   FetchStrategy,
+  isPrefetchTaskDirty,
   type PrefetchTaskFetchStrategy,
-  PrefetchPriority,
-} from './segment-cache/types'
-import { createCacheKey } from './segment-cache/cache-key'
+} from './segment-cache'
+import { createCacheKey } from './segment-cache'
 import {
   type PrefetchTask,
+  PrefetchPriority,
   schedulePrefetchTask as scheduleSegmentPrefetchTask,
   cancelPrefetchTask,
   reschedulePrefetchTask,
-  isPrefetchTaskDirty,
-} from './segment-cache/scheduler'
+} from './segment-cache'
 import { startTransition } from 'react'
 
 type LinkElement = HTMLAnchorElement | SVGAElement

@@ -2,7 +2,10 @@ import type { FlightRouterState } from '../../../shared/lib/app-router-types'
 import { createPrefetchURL } from '../app-router-utils'
 import { createCacheKey } from './cache-key'
 import { schedulePrefetchTask } from './scheduler'
-import { PrefetchPriority, type PrefetchTaskFetchStrategy } from './types'
+import {
+  PrefetchPriority,
+  type PrefetchTaskFetchStrategy,
+} from '../segment-cache'
 
 /**
  * Entrypoint for prefetching a URL into the Segment Cache.

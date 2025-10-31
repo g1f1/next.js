@@ -40,7 +40,7 @@ import {
   getRenderedSearch,
   urlToUrlWithoutFlightMarker,
 } from '../../route-params'
-import type { NormalizedSearch } from '../segment-cache/cache-key'
+import type { NormalizedSearch } from '../segment-cache'
 
 const createFromReadableStream =
   createFromReadableStreamBrowser as (typeof import('react-server-dom-webpack/client.browser'))['createFromReadableStream']

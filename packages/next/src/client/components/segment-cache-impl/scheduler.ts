@@ -33,9 +33,9 @@ import { createCacheKey } from './cache-key'
 import {
   FetchStrategy,
   type PrefetchTaskFetchStrategy,
+  getCurrentCacheVersion,
   PrefetchPriority,
-} from './types'
-import { getCurrentCacheVersion } from './cache'
+} from '../segment-cache'
 import {
   addSearchParamsIfPageSegment,
   PAGE_SEGMENT_KEY,
